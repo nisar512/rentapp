@@ -1,0 +1,30 @@
+<div class="filters">
+    <form action="/rental-catalog" method="POST">
+        <label for="filterby">Modify Results: </label>
+        <select name="filterby" id="filterby">
+            <option value="nofilter">Choose an Option</option>
+            <option value="availables" >Avalaible Items</option>
+            <option value="rented" >Your Rentals</option>
+        </select>
+        <button class="btn" type="submit">Update</button>
+    </form>
+    <form action="/returnRentals" method="POST">
+        <button type="submit" class="btn">Return All Items</button>
+    </form>
+</div>
+<div class="products rental">
+    {{#each prods}}
+    <div class="product">
+        <h2 class="title">{{this.title}}</h2>
+        <img src="{{this.imgUrl}}" alt="">
+        {{#if this.available }}
+        <form action="/rent/{{this.id}}" method="post">
+            <input type="number" name="rentdays" placeholder="Days to rent? (min {{this.minRentDays}})" required>
+            <button type="submit" class="btn">Rent</button>
+        </form>
+        {{else}}
+        <h3 class="rentedMessage">Rented By You</h3>
+        {{/if}}
+    </div>
+    {{/each}}
+</div>

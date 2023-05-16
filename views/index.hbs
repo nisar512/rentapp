@@ -1,0 +1,15 @@
+{{#if hasProducts }}
+<div class="products">
+    {{#each prods}}
+    <div class="product">
+        <img src="{{this.imgUrl}}" alt="">
+        <h3 class="title">{{this.title}}</h3>
+    </div>
+    {{/each}}
+</div>
+<div>
+    <a href="/rental-catalog" class="btn" style="margin: auto;">See all Items ></a>
+</div>
+{{else}}
+<h1>No Products Fount</h1>
+{{/if}}

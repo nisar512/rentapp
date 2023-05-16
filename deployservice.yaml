@@ -1,0 +1,37 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: noderentapp
+  labels:
+    app: rentapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rentapp
+  template:
+    metadata:
+      labels:
+        app: rentapp
+    spec:
+      containers:
+        - name: nodeserver
+          image: nisar512/rentapp:latest
+          ports:
+            - containerPort: 8000
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: noderentappservice
+spec:
+  selector:
+    app: rentapp
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 8000
+      nodePort: 31111

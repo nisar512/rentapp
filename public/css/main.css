@@ -1,0 +1,142 @@
+*{
+    padding: 0;margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Roboto', sans-serif;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #F2921D;
+}
+
+.header .title{
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+.header .search-box {
+    display: flex;
+}
+.header .search-box input{
+    width: 450px;
+    height: 35px;
+    font-size: 16px;
+    padding: 0 10px;
+    margin-right: 10px;
+}
+.header .search-box input:focus{
+    outline-color: #F2CD5C;
+}
+.btn{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    padding: 5px 10px;
+
+    min-width: 80px;
+    height: 35px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #400E32;
+    color: #fff;
+    border: none;
+    transition: all .25s;
+}
+.btn:hover{
+    background-color: #F2CD5C;
+    color: #400E32;
+    box-shadow: 0 0 5px #00000077;
+}
+
+.container{
+    width: 70%;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.products{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.products .product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border: 2px solid #0000006e;
+    padding: 15px;
+    text-align: center;
+    margin: 10px;
+}
+.products .product .title{
+    text-transform: capitalize;
+}
+
+.products .product img{
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+
+.filters{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.rental .product form,
+.filters form{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+.rental .product form input, 
+.filters form select{
+    width: 180px;
+    margin: 0 5px;
+    padding: 5px;
+}
+.rental .product form button, 
+.filters form button{
+    font-size: 14px;
+    height: 24px;
+}
+
+.rental{
+    flex-direction: column;
+}
+.rental .product{
+    width: 100%;
+    align-items: flex-start;
+    margin: 0;
+    margin-top: 20px;
+
+}
+.rental .product .rentedMessage{
+    padding: 5px;
+    width: 100%;
+    background-color: yellow;
+}
+.error-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.error-wrapper *{
+    margin-bottom: 15px;
+}
